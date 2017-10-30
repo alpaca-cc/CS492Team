@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+
 void test_message_file(){
     char* file_name = "message.txt";
     struct stat file_stat;
