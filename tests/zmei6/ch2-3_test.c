@@ -4,23 +4,23 @@
 */
 #include <stdio.h>
 
-void print_array();
-void print_swapped_array();
+void print_char_values(char* str);
+void print_reverse(char* str);
 
-void print_array() {
+void print_char_values(char* str) {
 	// Write your solution here
 }
 
-void print_swapped_array() {
+void print_reverse(char* str) {
 	// Write your solution here
 }
 
 // Uncomment the test functions and check run tests if you would like to run your code with provided tests
 int main() {
-    print_array();
-    print_swapped_array();
-    // test_print_array();
-    // test_print_swapped_array();
+    print_char_values("A B C 0123");
+    print_reverse("Hello World");
+    // test_print_char_values();
+    // test_print_reverse();
     return 0;
 }
 
@@ -29,7 +29,7 @@ int main() {
 */
 
 // takes a string argument and print out its chars and values of the chars
-void print_char_values(char* str){
+void print_char_values(char* str) {
 	char* cur_char = str;
 	while(*cur_char){
 		printf("%c %d\n", *cur_char, *cur_char);
@@ -38,7 +38,7 @@ void print_char_values(char* str){
 }
 
 // takes a string argument and print in reverse order
-void print_reverse(char* str){
+void print_reverse(char* str) {
 	int length = strlen(str);
 	char* cur_char = str+length-1;
 	while(cur_char != str){
@@ -53,7 +53,7 @@ void print_reverse(char* str){
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/wait.h>
+// #include <sys/wait.h>
 
 // testing:
 // 1. Use print("%c %d\n", *ptr, *ptr) to print out the characters
@@ -96,7 +96,7 @@ void test_print_char_values(){
         }else{
         	printf("test_print_char_values passed\n");
         }
-        waitpid(pid, NULL, 0);
+        // waitpid(pid, NULL, 0);
     }
 }
 
@@ -123,15 +123,8 @@ void test_print_reverse(){
         else{
             printf("test_print_reverse failed\n");
         }
-        waitpid(pid, NULL, 0);
+        // waitpid(pid, NULL, 0);
     }
-}
-
-
-int main(){
-	test_print_reverse();
-	test_print_char_values();
-	return 0;
 }
 
 
