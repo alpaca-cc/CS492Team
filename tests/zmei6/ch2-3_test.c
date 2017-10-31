@@ -1,18 +1,32 @@
+/*
+** Promp for this challenge, used as value for "code",
+** do not include in "testcode"
+*/
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/wait.h>
 
+void print_array();
+void print_swapped_array();
 
-// testing:
-// 1. Use print("%c %d\n", *ptr, *ptr) to print out the characters
-// and their integer values of the message "A B C 0123"
-// the message "A B C 0123" (one character and its integer value per line)?
-// 2. write a C program that uses char* pointers to print a 
-// message in revers? e.g. "dlroW olleH" should be printed as "Hello World"
+void print_array() {
+	// Write your solution here
+}
 
-#define CHILD 0
+void print_swapped_array() {
+	// Write your solution here
+}
+
+// Uncomment the test functions and check run tests if you would like to run your code with provided tests
+int main() {
+    print_array();
+    print_swapped_array();
+    // test_print_array();
+    // test_print_swapped_array();
+    return 0;
+}
+
+/*
+** Solutions for the tests, do not include in "testcode"
+*/
 
 // takes a string argument and print out its chars and values of the chars
 void print_char_values(char* str){
@@ -33,6 +47,22 @@ void print_reverse(char* str){
 	}
 	printf("%c",*cur_char);
 }
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+// testing:
+// 1. Use print("%c %d\n", *ptr, *ptr) to print out the characters
+// and their integer values of the message "A B C 0123"
+// the message "A B C 0123" (one character and its integer value per line)?
+// 2. write a C program that uses char* pointers to print a 
+// message in revers? e.g. "dlroW olleH" should be printed as "Hello World"
+
+#define CHILD 0
 
 void test_print_char_values(){
     int fd[2];

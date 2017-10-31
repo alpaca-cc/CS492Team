@@ -1,5 +1,6 @@
 /*
-** Promp for this challenge
+** Promp for this challenge, used as value for "code",
+** do not include in "testcode"
 */
 #include <stdio.h>
 
@@ -90,7 +91,7 @@ void test_print_array() {
         dup2(fd[1], STDOUT_FILENO);
         close(fd[0]);
         print_array();
-        fsync(fd[1]);
+        printf("\n");
         exit(0);
     }
     else {
@@ -102,7 +103,7 @@ void test_print_array() {
             printf(ANSI_COLOR_GREEN "test_print_array passed" ANSI_COLOR_RESET "\n");
         else {
             printf(ANSI_COLOR_RED "test_print_array failed" ANSI_COLOR_RESET "\n");
-            printf("Your Output: %s\n", buffer);
+            printf("Your Output: %s", buffer);
             printf("Expected Output: 10 30 60 50 40\n");
         }
         // waitpid(pid, NULL, 0); // Cannot #include <sys/wait.h>, no resource.h file
@@ -119,7 +120,6 @@ void test_print_swapped_array() {
         dup2(fd[1], STDOUT_FILENO);
         close(fd[0]);
         print_swapped_array();
-        fsync(fd[1]);
         exit(0);
     }
     else {
